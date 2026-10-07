@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Synagogue de la Réconciliation | Portail International</title>
+    <meta name="description" content="Site officiel international de La Synagogue de la Réconciliation de Jésus-Christ parmi les Nations. Cultes en direct, enseignements et communauté mondiale.">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#001638">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- =========================================================
+         HEADER INTERNATIONAL
+    ========================================================== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Accueil">
+                <img src="images/logo.png" alt="Logo La Synagogue de la Réconciliation">
+                <div class="logo-text">  
+                    <span class="logo-title">La Synagogue de la Réconciliation</span>
+                    <span class="logo-subtitle">De Jésus-Christ parmi les Nations</span>
+                </div>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link active">Accueil</a>
+                <a href="pages/a-propos.html" class="nav-link">L'Église</a>
+                <a href="pages/programme.html" class="nav-link">Programmes</a>
+                
+                <!-- Dropdown Communauté Desktop -->
+                <div class="dropdown-desktop">
+                    <a href="pages/communaute/index.html" class="nav-link dropdown-toggle">
+                        Communauté <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="pages/communaute/louange.html"><i class="fa-solid fa-music"></i> Louange</a>
+                        <a href="pages/communaute/jeunes.html"><i class="fa-solid fa-user-graduate"></i> Jeunesse</a>
+                        <a href="pages/communaute/intercession.html"><i class="fa-solid fa-hands-praying"></i> Intercession</a>
+                        <a href="pages/communaute/ecodim.html"><i class="fa-solid fa-child-reaching"></i> Ecodim</a>
+                        <a href="pages/communaute/securite-accueil.html"><i class="fa-solid fa-shield-heart"></i> Sécurité & Accueil</a>
+                        <a href="pages/communaute/audiovisuel.html"><i class="fa-solid fa-video"></i> Audiovisuel</a>
+                    </div>
+                </div>
+
+                <a href="pages/multimedia/index.html" class="nav-link">Médias</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="pages/multimedia/videos.html#direct" class="live-badge-btn" title="Suivre le culte en direct">
+                    <span class="live-pulse"></span>
+                    <span>LIVE</span>
+                </a>
+
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Changer de thème">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="menuToggle" class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="sideMenu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         MENU MOBILE (TIROIR LATÉRAL)
+    ========================================================== -->
+    <div id="menuOverlay" class="menu-overlay" aria-hidden="true"></div>
+    <aside id="sideMenu" class="side-menu" aria-hidden="true">
+        <div class="side-menu-header">
+            <div class="drawer-logo">
+                <img src="images/logo.png" alt="Logo">
+                <span>Synagogue Internationale</span>
+            </div>
+            <button id="closeMenu" class="close-menu" type="button" aria-label="Fermer le menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" aria-label="Menu mobile">
+            <a href="index.html"><i class="fa-solid fa-house-chimney"></i><span>Accueil</span></a>
+            <a href="pages/a-propos.html"><i class="fa-solid fa-church"></i><span>L'Église & Vision</span></a>
+            <a href="pages/programme.html"><i class="fa-solid fa-calendar-check"></i><span>Programmes & Cultes</span></a>
+            <a href="pages/multimedia/index.html"><i class="fa-solid fa-tv"></i><span>Direct & Enseignements</span></a>
+
+            <button id="communityToggle" class="community-toggle" type="button" aria-expanded="false">
+                <span><i class="fa-solid fa-globe"></i>Départements & Œuvres</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="communitySubmenu" class="community-submenu">
+                <a href="pages/communaute/index.html"><i class="fa-solid fa-users"></i>Toutes les communautés</a>
+                <a href="pages/communaute/louange.html"><i class="fa-solid fa-music"></i>Louange</a>
+                <a href="pages/communaute/jeunes.html"><i class="fa-solid fa-user-graduate"></i>Jeunesse Globale</a>
+                <a href="pages/communaute/intercession.html"><i class="fa-solid fa-hands-praying"></i>Intercession</a>
+                <a href="pages/communaute/ecodim.html"><i class="fa-solid fa-child-reaching"></i>Ecodim</a>
+                <a href="pages/communaute/securite-accueil.html"><i class="fa-solid fa-shield-heart"></i>Sécurité & Accueil</a>
+                <a href="pages/communaute/audiovisuel.html"><i class="fa-solid fa-video"></i>Audiovisuel</a>
+            </div>
+
+            <a href="pages/contact.html"><i class="fa-solid fa-paper-plane"></i><span>Nous Écrire / Prière</span></a>
+        </nav>
+
+        <div class="drawer-footer-actions">
+            <button id="drawerThemeToggle" type="button">
+                <i class="fa-solid fa-moon"></i>
+                <span>Mode sombre</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- =========================================================
+         CONTENU PRINCIPAL
+    ========================================================== -->
+    <main>
+        <!-- HERO SECTION IMMERSIVE (5 IMAGES) -->
+        <section id="accueil" class="hero-international">
+            <div class="hero-background">
+                <div class="hero-slide active" style="background-image: url('images/01.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('images/02.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('images/03.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('images/04.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('images/05.jpg');"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            
+            <div class="container hero-container-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-earth-africa"></i>
+                    <span>Portail International • Gabon & Nations</span>
+                </div>
+                
+                <h1>La Synagogue de la Réconciliation <span>de Jésus-Christ parmi les Nations</span></h1>
+                
+                <p class="hero-subtitle">
+                    Une arche de salut, de guérison et de délivrance établie pour impacter les peuples, propager l'Évangile et préparer les cœurs au retour du Seigneur.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="pages/multimedia/videos.html#direct" class="btn btn-gold">
+                        <i class="fa-solid fa-play"></i> Rejoindre le Culte Live
+                    </a>
+                    <a href="pages/a-propos.html" class="btn btn-glass">
+                        Découvrir la Vision <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+
+                <div class="hero-stats-banner">
+                    <div class="stat-item">
+                        <i class="fa-solid fa-broadcast-tower"></i>
+                        <div>
+                            <strong>Diffusion 24/7</strong>
+                            <span>Parole & Louange</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                        <div>
+                            <span>Famille Globale</span>
+                            <strong>Communauté Active</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Points du slider -->
+            <div class="hero-dots" aria-label="Navigation du diaporama">
+                <button type="button" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" aria-current="false" aria-label="Slide 2"></button>
+                <button type="button" aria-current="false" aria-label="Slide 3"></button>
+                <button type="button" aria-current="false" aria-label="Slide 4"></button>
+                <button type="button" aria-current="false" aria-label="Slide 5"></button>
+            </div>
+        </section>
+
+        <!-- SECTION "POUR VOUS" (CARTES INTERACTIVES AVEC IMAGES - Style MyICC) -->
+        <section class="section pour-vous-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-badge-sub">Espace Visiteurs & Fidèles</span>
+                    <h2>Pour <span>Vous</span></h2>
+                    <p>Faites vos premiers pas dans notre communauté ou renouvellez votre engagement spirituel en quelques clics.</p>
+                </div>
+
+                <div class="interactive-cards-grid">
+                    <a href="pages/contact.html" class="interactive-card">
+                        <div class="ic-image" style="background-image: url('images/01.jpg');"></div>
+                        <div class="ic-content">
+                            <div class="ic-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                            <div>
+                                <h3>Prière du salut</h3>
+                                <p>Je désire faire la prière du salut et donner ma vie à Christ.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="pages/communaute/index.html" class="interactive-card">
+                        <div class="ic-image" style="background-image: url('images/02.jpg');"></div>
+                        <div class="ic-content">
+                            <div class="ic-icon"><i class="fa-solid fa-user-group"></i></div>
+                            <div>
+                                <h3>Intégrer la famille</h3>
+                                <p>Je désire m'ancrer et m'engager au sein de l'église.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="pages/contact.html" class="interactive-card">
+                        <div class="ic-image" style="background-image: url('images/03.jpg');"></div>
+                        <div class="ic-content">
+                            <div class="ic-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div>
+                                <h3>Besoin de prière</h3>
+                                <p>Confiez-nous vos sujets de prière et d'intercession.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="pages/communaute/index.html" class="interactive-card">
+                        <div class="ic-image" style="background-image: url('images/04.jpg');"></div>
+                        <div class="ic-content">
+                            <div class="ic-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                            <div>
+                                <h3>Servir dans un département</h3>
+                                <p>Mettez vos dons et talents au service de l'œuvre.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION DIRECTION & RESPONSABLES DE L'ÉGLISE -->
+        <section class="section responsables-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-badge-sub">Leadership Spirituel</span>
+                    <h2>Les Responsables de <span>l'Église</span></h2>
+                    <p>Sous la conduite inspirée de nos conducteurs spirituels dédiés à l'édification du Corps de Christ.</p>
+                </div>
+
+                <div class="leaders-grid">
+                    <!-- Prophétesse Elysée -->
+                    <div class="leader-card">
+                        <div class="leader-img-container">
+                            <img src="images/pr.jpg" alt="Prophétesse Elysée">
+                        </div>
+                        <div class="leader-info">
+                            <span class="leader-role">Leader & Prophétesse</span>
+                            <h3>Prophétesse Josué-Elysée</h3>
+                            <p>Portant un ministère d'intercession profonde, d'écoute et d'onction pour restaurer les familles.</p>
+                        </div>
+                    </div>
+
+                    <!-- Docteur Salomon -->
+                    <div class="leader-card">
+                        <div class="leader-img-container">
+                            <img src="images/dr.jpg" alt="Docteur Salomon">
+                        </div>
+                        <div class="leader-info">
+                            <span class="leader-role">Enseignant de la Parole</span>
+                            <h3>Docteur Salomon</h3>
+                            <p>Engagé pour la proclamation de la vérité, la guérison des âmes et le réveil spirituel des nations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PRÉSENTATION DES COMMUNAUTÉS (BANNIÈRES VISUELLES) -->
+        <section class="section communautes-banner-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-badge-sub">Nos Départements</span>
+                    <h2>Explorez nos <span>Communautés</span></h2>
+                    <p>Chaque département est un foyer de service, de fraternité et de louange active.</p>
+                </div>
+
+                <div class="banner-communaute-grid">
+    <a href="pages/communaute/louange.html" class="communaute-banner-card" style="background-image: url('images/01.jpg');">
+        <div class="cb-overlay"></div>
+        <div class="cb-content">
+            <i class="fa-solid fa-music"></i>
+            <h3>Groupe Louange</h3>
+            <span>Entrer dans la présence divine</span>
+        </div>
+    </a>
+
+    <a href="pages/communaute/jeunes.html" class="communaute-banner-card" style="background-image: url('images/02.jpg');">
+        <div class="cb-overlay"></div>
+        <div class="cb-content">
+            <i class="fa-solid fa-user-graduate"></i>
+            <h3>Groupe de Jeunes</h3>
+            <span>La génération impactante</span>
+        </div>
+    </a>
+
+    <a href="pages/communaute/intercession.html" class="communaute-banner-card" style="background-image: url('images/03.jpg');">
+        <div class="cb-overlay"></div>
+        <div class="cb-content">
+            <i class="fa-solid fa-hands-praying"></i>
+            <h3>Intercession</h3>
+            <span>Guerriers dans la prière</span>
+        </div>
+    </a>
+
+    <a href="pages/communaute/audiovisuel.html" class="communaute-banner-card" style="background-image: url('images/04.jpg');">
+        <div class="cb-overlay"></div>
+        <div class="cb-content">
+            <i class="fa-solid fa-video"></i>
+            <h3>Audiovisuel & Médias</h3>
+            <span>Propager l'Évangile visuellement</span>
+        </div>
+    </a>
+
+    <!-- Ecodim -->
+    <a href="pages/communaute/ecodim.html" class="communaute-banner-card" style="background-image: url('images/05.jpg');">
+        <div class="cb-overlay"></div>
+        <div class="cb-content">
+            <i class="fa-solid fa-child-reaching"></i>
+            <h3>Ecodim</h3>
+            <span>Conduire les enfants à Christ</span>
+        </div>
+    </a>
+
+    <!-- Sécurité & Accueil -->
+    <a href="pages/communaute/securite-accueil.html" class="communaute-banner-card" style="background-image: url('images/01.jpg');">
+        <div class="cb-overlay"></div>
+        <div class="cb-content">
+            <i class="fa-solid fa-shield-heart"></i>
+            <h3>Sécurité & Accueil</h3>
+            <span>Servir avec ordre et amour</span>
+        </div>
+    </a>
+</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================
+         FOOTER INTERNATIONAL
+    ========================================================== -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand-col">
+                <div class="footer-logo-row">
+                    <img src="images/logo.png" alt="Logo">
+                    <div>
+                        <h4>La Synagogue de la Réconciliation</h4>
+                        <span>Jésus-Christ parmi les Nations</span>
+                    </div>
+                </div>
+                <p>Une station de grâce et de vérité établie pour élever les nations dans la crainte de Dieu et l'amour fraternel.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="pages/a-propos.html">À propos</a></li>
+                    <li><a href="pages/programme.html">Programmes</a></li>
+                    <li><a href="pages/multimedia/index.html">Multimédia</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social-col">
+                <h5>Restons Connectés</h5>
+                <p>Suivez nos diffusions et actualités mondiales :</p>
+                <div class="footer-social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 La Synagogue de la Réconciliation. Tous droits réservés.</p>
+                <p class="design-credit">Plateforme PWA Internationale</p>
+            </div>
+        </div>
+    </footer>
+
+     <!-- =========================================================
+         NAVIGATION MOBILE BASSE
+    ========================================================== -->
+    <nav class="bottom-nav" aria-label="Navigation mobile">
+        <a href="index.html" class="bottom-nav-item active">
+            <i class="fa-solid fa-house-chimney"></i>
+            <span>Accueil</span>
+        </a>
+        <a href="pages/a-propos.html" class="bottom-nav-item">
+            <i class="fa-solid fa-church"></i>
+            <span>L'Église</span>
+        </a>
+        <a href="pages/programme.html" class="bottom-nav-item">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Programme</span>
+        </a>
+        <a href="pages/multimedia/videos.html#direct" class="bottom-nav-item bottom-nav-live">
+            <i class="fa-solid fa-broadcast-tower"></i>
+            <span>LIVE</span>
+        </a>
+        <a href="pages/contact.html" class="bottom-nav-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <!-- =========================================================
+         JAVASCRIPT INTÉGRÉ
+    ========================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const $ = (s, p = document) => p.querySelector(s);
+            const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+
+            // Menu Mobile
+            const menuToggle = $("#menuToggle");
+            const closeMenu = $("#closeMenu");
+            const sideMenu = $("#sideMenu");
+            const menuOverlay = $("#menuOverlay");
+
+            if (menuToggle && sideMenu && menuOverlay) {
+                const openMenu = () => {
+                    sideMenu.classList.add("open");
+                    menuOverlay.classList.add("open");
+                    document.body.classList.add("menu-open");
+                    menuToggle.setAttribute("aria-expanded", "true");
+                };
+
+                const closeSideMenu = () => {
+                    sideMenu.classList.remove("open");
+                    menuOverlay.classList.remove("open");
+                    document.body.classList.remove("menu-open");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                };
+
+                menuToggle.addEventListener("click", openMenu);
+                if (closeMenu) closeMenu.addEventListener("click", closeSideMenu);
+                menuOverlay.addEventListener("click", closeSideMenu);
+
+                $$(".mobile-menu a").forEach(link => link.addEventListener("click", closeSideMenu));
+            }
+
+            // Sous-menu Communauté mobile
+            const communityToggle = $("#communityToggle");
+            const communitySubmenu = $("#communitySubmenu");
+            if (communityToggle && communitySubmenu) {
+                communityToggle.addEventListener("click", () => {
+                    const isOpen = communityToggle.classList.toggle("open");
+                    communitySubmenu.classList.toggle("open", isOpen);
+                    communityToggle.setAttribute("aria-expanded", String(isOpen));
+                });
+            }
+
+            // Gestion du Thème
+            const themeToggle = $("#themeToggle");
+            const drawerThemeToggle = $("#drawerThemeToggle");
+
+            const updateThemeIcons = (isDark) => {
+                if (themeToggle) {
+                    themeToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+                }
+                if (drawerThemeToggle) {
+                    drawerThemeToggle.innerHTML = isDark 
+                        ? '<i class="fa-solid fa-sun"></i><span>Mode clair</span>' 
+                        : '<i class="fa-solid fa-moon"></i><span>Mode sombre</span>';
+                }
+            };
+
+            const setTheme = (theme) => {
+                const isDark = (theme === "dark");
+                document.body.classList.toggle("dark", isDark);
+                localStorage.setItem("theme", isDark ? "dark" : "light");
+                updateThemeIcons(isDark);
+            };
+
+            const toggleTheme = () => {
+                const isDark = document.body.classList.contains("dark");
+                setTheme(isDark ? "light" : "dark");
+            };
+
+            if (localStorage.getItem("theme") === "dark") {
+                setTheme("dark");
+            } else {
+                updateThemeIcons(false);
+            }
+
+            if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
+            if (drawerThemeToggle) drawerThemeToggle.addEventListener("click", toggleTheme);
+
+            // Slider Hero International (5 slides)
+            const slides = $$(".hero-slide");
+            const dots = $$(".hero-dots button");
+            if (slides.length > 0 && dots.length > 0) {
+                let currentSlide = 0;
+                let intervalId = null;
+
+                const showSlide = (index) => {
+                    if (index < 0 || index >= slides.length) return;
+                    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle("active", i === index);
+                        dot.setAttribute("aria-current", i === index ? "true" : "false");
+                    });
+                    currentSlide = index;
+                };
+
+                const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
+
+                const startSlider = () => {
+                    if (!intervalId) intervalId = setInterval(nextSlide, 7000);
+                };
+
+                const stopSlider = () => {
+                    if (intervalId) {
+                        clearInterval(intervalId);
+                        intervalId = null;
+                    }
+                };
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener("click", () => {
+                        showSlide(index);
+                        stopSlider();
+                        startSlider();
+                    });
+                });
+
+                const hero = $(".hero-international");
+                if (hero) {
+                    hero.addEventListener("mouseenter", stopSlider);
+                    hero.addEventListener("mouseleave", startSlider);
+                }
+
+                showSlide(0);
+                startSlider();
+            }
+
+            // Service Worker PWA
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW error:', err));
+            }
+        });
+    </script>
+</body>
+</html>
